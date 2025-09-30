@@ -144,3 +144,36 @@ Este criterio se limita a darnos los ángulos límites para que el esfuerzo en e
     *   Incluso si aparecen tracciones y fisuración, las presas en arco tienen una gran capacidad de adaptación, y usualmente queda un "arco activo" (resistente) sometido íntegramente a compresión con gran capacidad de resistencia.
 
 Para aplicar este criterio, se necesitarían los valores calculados de $e$ y $R$ para los arcos principales.
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+La determinación del espesor de una presa en arco se basa principalmente en cálculos estructurales para garantizar que el material soporte las tensiones. Por lo tanto, el **espesor mínimo no es un valor fijo universal**, sino que está implícitamente determinado por los requisitos de resistencia y la geometría.
+
+Sin embargo, los textos proporcionan información relevante sobre cómo se determina el espesor y ejemplos de dimensiones:
+
+### Determinación Estructural del Espesor
+
+El proceso de cálculo preliminar para una presa bóveda se realiza por aproximaciones sucesivas.
+
+1.  **Fórmula de los Tubos:** En una primera aproximación, se calcula el espesor ($e$) del arco horizontal utilizando la fórmula de los tubos delgados, que supone que cada arco es independiente y está sometido a una presión radial uniforme ($p$):
+    $$e = \frac{p \cdot R}{\sigma} = \frac{\gamma h \cdot R}{\sigma} \quad$$
+    Donde $\sigma$ es la tensión admisible del material. El espesor resultante ($e$) en esta fórmula representa el **espesor mínimo requerido** para resistir la carga hidrostática ($p$) a una profundidad ($h$) determinada, con un radio ($R$) y una tensión admisible ($\sigma$) dada.
+2.  **Tensión Admisible Reducida:** Para la fijación de los espesores en primera aproximación, se suele tomar la **tensión admisible del hormigón del orden de la mitad de su valor** para tener en cuenta los efectos de las reacciones de apoyo en las laderas que pueden generar momentos e incluso tracciones. Esto obliga a un espesor preliminar mayor, lo que actúa como un factor de seguridad inicial.
+3.  **Variación Vertical:** El espesor debe aumentar hacia la base debido a que la carga ($h$) y el radio ($R$) varían con la profundidad (fórmula de los tubos). Por lo tanto, el espesor más delgado generalmente se encontrará en el coronamiento (la parte superior).
+
+### Ejemplos de Espesores Mínimos Prácticos
+
+Aunque no se establece un requisito mínimo absoluto para el espesor de la clave del arco en una presa bóveda general, existe un ejemplo concreto de dimensiones mínimas en presas de bóvedas múltiples, un tipo de presa en arco:
+
+*   La presa Bartlett Dam, un ejemplo de bóveda múltiple en Arizona, utiliza una serie de arcos con un radio de 7 m (24 ft). Estos arcos miden **2 m (7 ft) en la base y solo 0,6 m (2 ft) en la cresta**. Este valor (0,6 m) es un ejemplo de un espesor real muy reducido en la parte superior.
+
+### Clases de Presas por Espesor
+
+El espesor de la presa en arco se relaciona con su esbeltez, definida por la relación entre el ancho de la base ($B$) y la altura estructural ($H$):
+
+*   **Presas Esbeltas:** $B/H \le 0,20$ (e.g., Dique El Cajón, $B/H = 0,077$; Dique Los Alazanes, $B/H = 0,192$).
+*   **Presas Semiesbeltas:** $0,20 \le B/H \le 0,30$.
+*   **Presas de Gran Espesor (Arco-Gravedad):** $B/H \ge 0,30$. Estas presas son gruesas y su baja curvatura hace que resistan parte de las cargas por efecto arco y parte por gravedad.
+
+En resumen, el espesor mínimo en una presa en arco es el que resulta de los cálculos de ingeniería ($e = \gamma h R / \sigma$) para resistir las tensiones admisibles, y no un valor fijo de normativa, aunque la práctica constructiva impone límites funcionales.
