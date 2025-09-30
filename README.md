@@ -268,8 +268,8 @@ Estas variables están relacionadas con el análisis sísmico de tipo **pseudoes
 ### Componente Radial del Efecto Sísmico en la Masa
 
 La **fuerza inercial horizontal** total por metro de altura ($\text{F}_i$) se calcula como:
-$\text{F}_i = \text{M} \cdot a = (\text{Masa por metro lineal}) \cdot (\beta \cdot g)$
-$\text{F}_i = (\gamma_{hor} \cdot e \cdot 1,0) \cdot \beta \cdot g$
+$$\{F}_i = \{M} \cdot a = (\{Masa por metro lineal}) \cdot (\beta \cdot g)$$
+$$\{F}_i = (\gamma_{hor} \cdot e \cdot 1,0) \cdot \beta \cdot g$$
 (Donde $e$ es el espesor y $\gamma_{hor}$ es el peso específico del hormigón).
 
 #### Descomposición de la Fuerza
