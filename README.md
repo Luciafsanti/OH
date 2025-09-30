@@ -243,3 +243,45 @@ El **Criterio de Jakobsen** es una formulación utilizada para este fin, limitá
 *   Si el punto cae **por encima de la curva**, esto indica compresión en ambos paramentos.
 
 Incluso si se detectan tracciones y fisuración en posiciones extremas de la línea de presiones, en las presas en arco **siempre quedará un arco activo o resistente** con espesor reducido y sometido íntegramente a compresión, lo que confiere a la estructura una gran capacidad de resistencia.
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+El fragmento al que usted se refiere aborda la complejidad de aplicar un **estado de carga horizontal** (el efecto sísmico en la masa) dentro del **método simplificado de la Fórmula de los Tubos**, que por definición es aplicable solo a cargas **radiales uniformes**.
+
+A continuación, se explica el significado de las variables y cómo se considera el componente radial en esta aproximación:
+
+### Definición de las variables $\boldsymbol{a, \beta, \text{y } g}$
+
+Estas variables están relacionadas con el análisis sísmico de tipo **pseudoestático**, donde el efecto dinámico del sismo se simula mediante fuerzas estáticas horizontales proporcionales a la masa de la estructura:
+
+*   **$\boldsymbol{\beta}$ (Coeficiente Sísmico Horizontal):**
+    *   Es el **coeficiente de aceleración** (o coeficiente sísmico).
+    *   Representa la relación entre la aceleración sísmica esperada ($a$) y la aceleración de la gravedad ($g$). En el ejercicio se proporciona $\beta = 0,05$.
+*   **$\boldsymbol{g}$ (Aceleración de la gravedad):**
+    *   Es la aceleración estándar de la gravedad terrestre (generalmente $9,81 \, \text{m/s}^2$).
+*   **$\boldsymbol{a}$ (Aceleración Sísmica):**
+    *   Es la **aceleración horizontal** real que experimenta la masa del arco durante el Sismo Básico Operativo (SBO).
+    *   Se calcula como $a = \beta \cdot g$. Para estructuras simples, se puede asumir una **aceleración uniforme** desde la base hasta la cresta, igual a la aceleración estimada del sitio para calcular las cargas de inercia en análisis pseudoestáticos.
+
+### Componente Radial del Efecto Sísmico en la Masa
+
+La **fuerza inercial horizontal** total por metro de altura ($\text{F}_i$) se calcula como:
+$$\text{F}_i = \text{M} \cdot a = (\text{Masa por metro lineal}) \cdot (\beta \cdot g)$$
+$$\text{F}_i = (\gamma_{hor} \cdot e \cdot 1,0) \cdot \beta \cdot g$$
+(Donde $e$ es el espesor y $\gamma_{hor}$ es el peso específico del hormigón).
+
+#### Descomposición de la Fuerza
+
+Para poder utilizar la simplificación de la Fórmula de los Tubos ($\sigma = P \cdot R / e$), que asume que la carga ($P$) es **radial y uniforme**, la fuerza inercial horizontal $\text{F}_i$ debe ser descompuesta para obtener su componente normal (radial) al paramento del arco.
+
+**Consideración del componente radial:**
+
+1.  **Dirección de la fuerza:** El sismo impone una fuerza inercial $\text{F}_i$ que actúa **horizontalmente** en una única dirección (o en la dirección que produzca la estructura menos estable). Esta fuerza actúa sobre el centro de gravedad del arco horizontal considerado.
+2.  **Necesidad radial:** En un arco curvo, una fuerza horizontal no es radial excepto en el punto donde el paramento es vertical (si la fuerza sísmica es transversal al cañón) o en la clave del arco (si la fuerza sísmica es paralela al cañón).
+3.  **Aproximación:** Para incluir esta carga en la Fórmula de los Tubos (una simplificación extrema), se debe considerar únicamente la **componente de la fuerza inercial $\text{F}_i$ que actúa en la dirección radial (o normal) al arco en el punto de análisis.**
+    *   Si el arco es circular y la fuerza sísmica es transversal al eje del cañón (dirección usual para el análisis de arco), el componente radial de la fuerza inercial en cualquier punto del arco es proporcional al coseno del ángulo ($\theta$) que dicho punto forma con la clave.
+    *   Esta componente radial es la que debe sumarse, en términos de **presión equivalente** ($P_{sísmico}$), al empuje hidrostático y de sedimentos para obtener la $P_{total}$ en la fórmula $\sigma = P_{total} \cdot R / e$.
+
+En resumen, la consideración del componente radial se realiza **proyectando la fuerza horizontal de inercia ($F_i$) sobre la dirección normal a la superficie del arco** en el punto que se está analizando. No obstante, esta aproximación es laboriosa y la Fórmula de los Tubos resulta muy limitada para modelar correctamente los efectos sísmicos, que son inherentemente complejos y no uniformes a lo largo del arco. Para un cálculo más preciso, es necesario recurrir a métodos más sofisticados como el Método de la Carga de Prueba (*Trial Load*) o el Método de Elementos Finitos.
