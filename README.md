@@ -177,3 +177,69 @@ El espesor de la presa en arco se relaciona con su esbeltez, definida por la rel
 *   **Presas de Gran Espesor (Arco-Gravedad):** $B/H \ge 0,30$. Estas presas son gruesas y su baja curvatura hace que resistan parte de las cargas por efecto arco y parte por gravedad.
 
 En resumen, el espesor mínimo en una presa en arco es el que resulta de los cálculos de ingeniería ($e = \gamma h R / \sigma$) para resistir las tensiones admisibles, y no un valor fijo de normativa, aunque la práctica constructiva impone límites funcionales.
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+La verificación de tensiones en los arcos de una presa bóveda se realiza como parte de un **proceso iterativo de cálculo y proyecto por aproximaciones sucesivas**, dada la gran complejidad estructural de este tipo de presas.
+
+La verificación tensional ocurre principalmente en dos etapas de cálculo:
+
+### 1. Verificación en Primera Aproximación (Fórmulas Simplificadas)
+
+En la fase de predimensionamiento, la presa se considera definida por una serie de **arcos horizontales** independientes. Cada arco resiste el empuje del agua correspondiente a una faja de $1,00 \, \text{m}$ de altura.
+
+Para comprobar el comportamiento resistente de estos arcos, se utiliza la **Fórmula de los Tubos delgados** (o cilindros). Una vez que se ha calculado el espesor ($e$) del arco para una cota determinada, se verifica la tensión ($\sigma$) producida por la presión total ($p$) actuante en ese nivel, despejando $\sigma$ de la fórmula fundamental:
+
+$$\sigma = \frac{p \cdot R}{e}$$
+
+Donde $R$ es el radio del arco y $p$ es la presión radial uniforme.
+
+**Consideraciones y Limitaciones de la Fórmula de los Tubos:**
+Esta fórmula se considera una **primera aproximación** porque:
+1.  Supone la **independencia de los arcos**, aunque en realidad están trabados por la coherencia del material y la estructura trabaja en conjunto.
+2.  Es válida para formas circulares cerradas con cargas radiales y **sin coacción**. Los arcos reales se apoyan en las laderas (estribos), recibiendo reacciones de apoyo que generan momentos e incluso **tracciones**.
+
+Para tener en cuenta estos efectos no analizados en la fórmula, es práctica habitual tomar la tensión admisible del hormigón ($\sigma_{adm}$) del orden de **la mitad de su valor** durante la primera aproximación para fijar los espesores. La disminución de la tensión admisible se compensa con la interacción real de los arcos (que reduce las cargas), dando un resultado satisfactorio para esta etapa.
+
+### 2. Verificación Detallada (Comportamiento Resistente)
+
+Una vez que se ha definido la geometría inicial, la **comprobación del comportamiento resistente** debe realizarse para **todos los estados de carga** considerados.
+
+Para el cálculo más preciso de tensiones y deformaciones, las fórmulas simplificadas resultan insuficientes. Se recurre a métodos de análisis más complejos:
+
+#### A. Método de la Carga de Prueba (Trial Load)
+Este método concibe la estructura formada por elementos horizontales (**arcos**) y elementos verticales (**ménsulas** o *cantilevers*) trabados entre sí y colaborando conjuntamente en la resistencia de las cargas.
+
+El proceso incluye la verificación de tensiones al final de una serie de iteraciones:
+1.  Se divide el empuje hidrostático en dos partes, una que carga sobre la ménsula y otra que carga sobre los arcos.
+2.  Se supone un reparto de presiones inicial y se calculan los desplazamientos de los puntos comunes para los arcos y las ménsulas.
+3.  Se corrigen las distribuciones de presiones hasta conseguir que los desplazamientos sean prácticamente iguales, asegurando la unicidad del desplazamiento en los puntos de intersección.
+4.  **Se calculan las tensiones** en los arcos y en las ménsulas para verificar que son **aceptables**.
+5.  Si las tensiones no son aceptables (es decir, menores que las admisibles), se modifican los espesores o la geometría de los arcos y se repite el proceso.
+
+#### B. Método de Elementos Finitos
+Este método permite el **análisis tridimensional** de la estructura. Utiliza elementos hexaédricos o prismáticos para ajustarse a la geometría compleja de la presa y de la garganta, y posibilita estudiar el funcionamiento tridimensional y conjuntamente con la fundación. Permite determinar el estado tensional y de deformación.
+
+### 3. Criterios de Aceptación de Tensiones
+
+Las tensiones calculadas deben compararse con la resistencia admisible del hormigón, ajustada por los **Factores de Seguridad (Fs)**, según la clasificación de los estados de carga (definidos por el Bureau of Reclamation):
+
+| Combinación de Carga | Factor de Seguridad (Fs) | Tensión Admisible ($\sigma_{adm}$) |
+| :--- | :--- | :--- |
+| **USUALES** (Ej: NNE) | $Fs = 3$ | $\sigma_{comp} \leq \sigma_{adm}/3$ |
+| **INUSUALES** (Ej: NME) | $Fs = 2$ | $\sigma_{comp} \leq \sigma_{adm}/2$ |
+| **EXTREMAS** (Ej: SBO) | $Fs = 1$ | $\sigma_{comp} \leq \sigma_{adm}/1$ |
+
+Para las presas en arco, las tensiones admisibles a tracción aumentan de las combinaciones usuales a las inusuales y a las extremas.
+
+### 4. Verificación de Tracciones (Criterio de Jakobsen)
+
+Además de verificar las compresiones, se debe determinar si existen posibilidades de **tracciones** (tensiones negativas) en los arcos, especialmente cerca de los estribos, donde las reacciones generan momentos.
+
+El **Criterio de Jakobsen** es una formulación utilizada para este fin, limitándose a verificar los **ángulos límites** para que el esfuerzo en el trasdós (paramento aguas abajo) de los arranques sea cero. Este criterio relaciona la relación **espesor/radio medio ($e/r$)** con el **ángulo central ($2\theta$)**.
+
+*   Si la geometría del arco cae **debajo de la curva** definida por el criterio, existirá tracción en el trasdós de los arranques y probablemente en el intradós de la clave.
+*   Si el punto cae **por encima de la curva**, esto indica compresión en ambos paramentos.
+
+Incluso si se detectan tracciones y fisuración en posiciones extremas de la línea de presiones, en las presas en arco **siempre quedará un arco activo o resistente** con espesor reducido y sometido íntegramente a compresión, lo que confiere a la estructura una gran capacidad de resistencia.
