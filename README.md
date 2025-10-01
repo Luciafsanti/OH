@@ -284,3 +284,64 @@ Para poder utilizar la simplificación de la Fórmula de los Tubos ($\sigma = P 
     *   Esta componente radial es la que debe sumarse, en términos de **presión equivalente** ($P_{sísmico}$), al empuje hidrostático y de sedimentos para obtener la $P_{total}$ en la fórmula $\sigma = P_{total} \cdot R / e$.
 
 En resumen, la consideración del componente radial se realiza **proyectando la fuerza horizontal de inercia ($F_i$) sobre la dirección normal a la superficie del arco** en el punto que se está analizando. No obstante, esta aproximación es laboriosa y la Fórmula de los Tubos resulta muy limitada para modelar correctamente los efectos sísmicos, que son inherentemente complejos y no uniformes a lo largo del arco. Para un cálculo más preciso, es necesario recurrir a métodos más sofisticados como el Método de la Carga de Prueba (*Trial Load*) o el Método de Elementos Finitos.
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Su pregunta es fundamental para entender el método simplificado de cálculo utilizado en el predimensionamiento de las presas en arco.
+
+La expresión $$\sigma = \frac{P_{total} \cdot R}{e}$$ es la fórmula de la **Tensión Tangencial (o Circunferencial)** en un **cilindro delgado** sometido a presión interna, conocida en este contexto como la **Fórmula de los Tubos delgados**.
+
+A continuación, se explica el sentido y la justificación de por qué el estado tensional se calcula de esta manera, según lo descrito en las fuentes:
+
+### 1. Contexto: Presas en Arco y Primera Aproximación
+
+El proyecto y el cálculo de una presa bóveda son de gran complejidad estructural, por lo que se realizan por **aproximaciones sucesivas**.
+
+En la primera aproximación (o etapa de anteproyecto), la presa se concibe simplificadamente como si estuviera formada por una **serie de arcos horizontales independientes**. Esta simplificación permite aplicar principios básicos de resistencia de materiales.
+
+Se establece la hipótesis de que **cada arco resiste el empuje del agua** (y otras cargas) correspondiente a una **faja de $1,00 \, \text{m}$ de altura** y a la profundidad correspondiente.
+
+### 2. Origen y Sentido de la Fórmula
+
+El arco horizontal, que soporta la presión del agua, se modela como un **tubo** (o cilindro) delgado sometido a una presión radial uniforme.
+
+La fórmula de los tubos delgados (cilindros) relaciona la presión ($p$) con la tensión interna ($\sigma$) que se genera en el material, el radio ($R$), y el espesor ($e$) del cilindro.
+
+Las fuentes establecen la fórmula para determinar el **espesor** ($e$) que debe tener el arco para resistir una presión $p$ con una tensión admisible $\sigma$:
+
+$$e = \frac{p \cdot R}{\sigma}$$
+
+La fórmula que usted pregunta, $\sigma = \frac{P_{total} \cdot R}{e}$, es simplemente el **despeje de la tensión ($\sigma$)** de esta fórmula original.
+
+### 3. Significado Físico de la Relación
+
+Esta fórmula describe el **equilibrio de fuerzas** en la pared del arco por unidad de altura:
+
+*   **Presión ($P_{total}$ o $p$):** Representa la fuerza externa (presión total, incluyendo agua, sedimentos o sismo) que intenta **romper o abrir el arco**. Esta fuerza es proporcional a la presión ($p$) y al radio ($R$) del arco.
+*   **Tensión ($\sigma$):** Representa la **tensión tangencial o circunferencial** (es decir, el esfuerzo interno) que se desarrolla en el hormigón y que actúa a lo largo de la curva para **resistir y contener la presión interna**.
+
+#### Componentes de la Fórmula:
+
+1.  **$P_{total} \cdot R$ (Fuerza Interna Total):** Esta parte representa la fuerza total por unidad de longitud (vertical) que debe ser resistida por la sección del arco.
+2.  **$e$ (Espesor):** El espesor es la sección sobre la que se distribuye la tensión.
+
+La tensión ($\sigma$) resultante es la fuerza interna ($P_{total} \cdot R$) dividida por el área de la sección ($e \cdot 1,0 \, \text{m}$ de altura).
+
+$$\boldsymbol{\sigma = \frac{\text{Fuerza a resistir}}{\text{Área resistente}}}$$
+
+**Implicaciones del Sentido:**
+
+*   **Proporcionalidad con el Radio ($R$):** Cuanto mayor es el radio del arco (más plana es la curva), mayor debe ser la tensión generada para resistir la misma presión.
+*   **Inversamente Proporcional al Espesor ($e$):** Cuanto mayor sea el espesor del arco, la misma fuerza se distribuye en más material, por lo que la tensión ($\sigma$) disminuye.
+
+### 4. Limitaciones de la Fórmula (Por qué solo es una aproximación)
+
+Aunque es satisfactoria para el predimensionamiento, es crucial entender que esta fórmula tiene limitaciones en el contexto de una presa en arco real:
+
+1.  **Cargas Radiales Uniformes:** La fórmula solo es válida para formas circulares cerradas con cargas perfectamente radiales y uniformes.
+2.  **Coacción de los Apoyos:** En la realidad, los arcos no son cerrados; **se apoyan en las laderas (estribos)**. Estas reacciones de apoyo en los estribos generan momentos internos e incluso **tracciones** (tensiones negativas) que la Fórmula de los Tubos no considera.
+3.  **Interacción Vertical:** La fórmula supone la **independencia de los arcos**. Sin embargo, la estructura trabaja en conjunto; los arcos están trabados por la coherencia del material y transmiten cargas a los arcos adyacentes (superior e inferior) y a las ménsulas verticales.
+
+Debido a estas limitaciones, en la práctica, se suele tomar la tensión admisible ($\sigma_{adm}$) del hormigón a la mitad de su valor en esta etapa para **compensar** los efectos no considerados (momentos, tracciones) antes de usar la fórmula.
