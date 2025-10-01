@@ -345,3 +345,16 @@ Aunque es satisfactoria para el predimensionamiento, es crucial entender que est
 3.  **Interacción Vertical:** La fórmula supone la **independencia de los arcos**. Sin embargo, la estructura trabaja en conjunto; los arcos están trabados por la coherencia del material y transmiten cargas a los arcos adyacentes (superior e inferior) y a las ménsulas verticales.
 
 Debido a estas limitaciones, en la práctica, se suele tomar la tensión admisible ($\sigma_{adm}$) del hormigón a la mitad de su valor en esta etapa para **compensar** los efectos no considerados (momentos, tracciones) antes de usar la fórmula.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+El Criterio de Jakobsen (o Jacobsen) se encuentra en la bibliografía en la sección que aborda el **Funcionamiento estructural de las presas bóvedas**.
+
+Específicamente, este criterio se menciona como una de las diversas formulaciones para determinar la forma del **arco activo** en una presa bóveda.
+
+La fuente indica que el propósito del **Criterio de Jacobsen** es proporcionar los **ángulos límites** para que el esfuerzo en el paramento de aguas abajo (*trasdós*) de los arranques sea cero, en función de la relación **espesor/radio medio ($\text{e}/\text{r}$)** y el **ángulo central ($2\theta$)**.
+
+La discusión sobre el criterio de Jacobsen explica la posibilidad de que aparezcan tracciones y zonas de fisuración, especialmente si la relación $\text{e}/\text{r}$ y $2\theta$ definen un punto que cae **bajo la curva** de referencia. Esto implicaría la existencia de tracción en el trasdós de los arranques y, probablemente, en el intradós de la clave. Sin embargo, si el punto cae **por encima de la curva**, esto indica compresión en ambos paramentos.
+
+Este criterio se usa para la **determinación de posibilidades de tracciones en los arcos** solicitada en el apartado (e) del ejercicio.
